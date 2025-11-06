@@ -1,0 +1,78 @@
+{
+  "hero": {
+    "title": "Delivering  Shubham Trusted Healthcare for Every Generation",
+    "subtitle": "Personalized medical care backed by technology and compassion.",
+    "backgroundImage": "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1470&q=80",
+    "button1": "Book Appointment",
+    "button2": "Explore Services"
+  },
+
+  "whoWeAre": {
+    "title": "Who We Are",
+    "description1": "At MedCare Plus, we combine cutting-edge medical technology with genuine human compassion to deliver healthcare that truly cares.",
+    "description2": "With over 15 years of excellence, we’ve built a reputation for clinical expertise, innovative treatments, and putting patients first.",
+    "button": "Learn More About Us",
+    "image": "/images/my-team.jpg"
+  },
+
+  "services": [
+    {
+      "title": "Cardiology",
+      "description": "Expert heart care and cardiovascular treatments."
+    },
+    {
+      "title": "Dental Care",
+      "description": "Complete oral health and dental treatments."
+    },
+    {
+      "title": "Eye Care",
+      "description": "Comprehensive vision care and eye treatments."
+    },
+    {
+      "title": "Neurology",
+      "description": "Advanced neurological care and treatments."
+    }
+  ],
+
+  "whyChooseUs": {
+    "title": "Why Choose MedCare Plus",
+    "subtitle": "Trusted by thousands of patients for our commitment to excellence.",
+    "stats": [
+      { "num": "15+", "label": "Years Experience" },
+      { "num": "10,000+", "label": "Patients Served" },
+      { "num": "25+", "label": "Expert Doctors" },
+      { "num": "24/7", "label": "Emergency Care" }
+    ],
+    "cards": [
+      {
+        "title": "Certified Excellence",
+        "description": "Accredited medical facility with international standards."
+      },
+      {
+        "title": "Award Winning",
+        "description": "Recognized for outstanding patient care and service."
+      },
+      {
+        "title": "24/7 Support",
+        "description": "Round-the-clock emergency care and support."
+      }
+    ]
+  },
+
+  "testimonials": {
+    "title": "What Our Patients Say",
+    "subtitle": "Real stories from patients who trust us with their health.",
+    "people": [
+      "Priya Sharma",
+      "Rajesh Kumar",
+      "Anita Patel"
+    ]
+  },
+
+  "cta": {
+    "title": "Book Your Consultation Today",
+    "subtitle": "Take the first step towards better health. Our expert medical team is ready to care for you.",
+    "button1": "Book Appointment",
+    "button2": "Call +91 98765 43210"
+  }
+}
