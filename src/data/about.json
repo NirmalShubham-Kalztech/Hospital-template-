@@ -1,0 +1,97 @@
+{
+  "hero": {
+    "title": "About MedCare Plus",
+    "subtitle": "Caring Beyond Medicine – Your trusted healthcare partner for over 15 years"
+  },
+
+  "whoWeAre": {
+    "title": "Who We Are",
+    "description": [
+      "MedCare Plus is more than just a healthcare provider – we are your partners in wellness. Founded in 2010 with a simple yet powerful vision: to deliver exceptional medical care that combines clinical excellence with genuine human compassion.",
+      "Our patient-first philosophy drives everything we do. We believe that quality healthcare should be accessible, personalized, and delivered with empathy.",
+      "We've grown from a small clinic to a comprehensive healthcare facility, but our core values remain unchanged: treating every patient like family."
+    ],
+    "image": "/images/about.jpg"
+  },
+
+  "missionVision": {
+    "mission": {
+      "title": "Our Mission",
+      "text": "To deliver quality healthcare with empathy and innovation, ensuring every patient receives personalized medical care."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be the most reliable healthcare partner globally, recognized for innovation, community wellness and patient-centered care."
+    }
+  },
+
+  "coreValues": [
+    {
+      "icon": "fa-solid fa-medal",
+      "title": "Clinical Excellence",
+      "text": "Maintaining the highest standards of medical care with evidence-based treatments."
+    },
+    {
+      "icon": "fa-solid fa-heart",
+      "title": "Patient Focus",
+      "text": "Putting patients at the center of everything we do."
+    },
+    {
+      "icon": "fa-solid fa-lightbulb",
+      "title": "Innovation",
+      "text": "Embracing cutting-edge medical technology for better outcomes."
+    },
+    {
+      "icon": "fa-solid fa-shield-halved",
+      "title": "Integrity",
+      "text": "Operating with transparency, honesty, and ethical practices."
+    }
+  ],
+
+  "journey": [
+    {
+      "year": "2010",
+      "title": "Founded",
+      "text": "MedCare Plus was established with a vision to provide quality healthcare."
+    },
+    {
+      "year": "2015",
+      "title": "5K Patients",
+      "text": "Reached the milestone of serving 5,000 patients."
+    },
+    {
+      "year": "2020",
+      "title": "3 Branches",
+      "text": "Expanded to three locations to serve more communities."
+    },
+    {
+      "year": "2024",
+      "title": "TeleHealth Launch",
+      "text": "Introduced telemedicine services."
+    }
+  ],
+
+  "leadership": [
+    {
+      "name": "Dr. Rajesh Sharma",
+      "role": "Chief Medical Officer",
+      "image": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "name": "Dr. Priya Patel",
+      "role": "Head of Cardiology",
+      "image": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+      "name": "Dr. Amit Kumar",
+      "role": "Director of Operations",
+      "image": "https://randomuser.me/api/portraits/men/45.jpg"
+    }
+  ],
+
+  "cta": {
+    "title": "Join the MedCare Family Today",
+    "subtitle": "Experience healthcare that truly cares.",
+    "button": "Schedule Your Visit"
+  }
+}
