@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Heart, X } from "lucide-react";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const menuItems = ["Home", "About", "Services", "Doctors", "Contact"];
+
   return (
     <nav className="w-full bg-white fixed top-0 left-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-10 py-4">
+
         {/* Logo */}
-        <Link
+        <NavLink
           to="/"
           className="flex items-center gap-2 hover:opacity-90 transition"
           onClick={() => setOpen(false)}
@@ -20,31 +24,33 @@ export default function Navbar() {
           <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
             MedCare <span className="text-blue-600">Plus</span>
           </h1>
-        </Link>
+        </NavLink>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-gray-800 font-medium items-center">
-          {["Home", "About", "Services", "Doctors", "Contact"].map((item) => (
+          {menuItems.map((item) => (
             <li key={item}>
-              <Link
+              <NavLink
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className={`hover:text-blue-600 ${
-                  item === "Home" ? "text-blue-600" : ""
-                } transition`}
+                className={({ isActive }) =>
+                  `transition hover:text-blue-600 ${
+                    isActive ? "text-blue-600 font-semibold" : "text-gray-800"
+                  }`
+                }
               >
                 {item}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
 
         {/* CTA Button */}
-        <Link
+        <NavLink
           to="/appointment"
           className="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
         >
           Book Appointment
-        </Link>
+        </NavLink>
 
         {/* Mobile Menu Button */}
         <button
@@ -63,25 +69,30 @@ export default function Navbar() {
         }`}
       >
         <ul className="flex flex-col items-center gap-5 py-5 text-gray-700 font-medium">
-          {["Home", "About", "Services", "Doctors", "Contact"].map((item) => (
+          {menuItems.map((item) => (
             <li key={item}>
-              <Link
+              <NavLink
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                 onClick={() => setOpen(false)}
-                className="block hover:text-blue-600 transition"
+                className={({ isActive }) =>
+                  `block transition hover:text-blue-600 ${
+                    isActive ? "text-blue-600 font-semibold" : "text-gray-800"
+                  }`
+                }
               >
                 {item}
-              </Link>
+              </NavLink>
             </li>
           ))}
+
           <li>
-            <Link
+            <NavLink
               to="/appointment"
               onClick={() => setOpen(false)}
               className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
             >
               Book Appointment
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
