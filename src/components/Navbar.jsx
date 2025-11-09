@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Heart, X } from "lucide-react";
 
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -12,7 +11,7 @@ export default function Navbar() {
     <nav className="w-full bg-white fixed top-0 left-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-10 py-4">
 
-        {/* Logo */}
+        {/* ✅ Logo */}
         <NavLink
           to="/"
           className="flex items-center gap-2 hover:opacity-90 transition"
@@ -26,7 +25,7 @@ export default function Navbar() {
           </h1>
         </NavLink>
 
-        {/* Desktop Menu */}
+        {/* ✅ Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-gray-800 font-medium items-center">
           {menuItems.map((item) => (
             <li key={item}>
@@ -44,15 +43,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA Button */}
+        {/* ✅ CTA Button (Desktop) */}
         <NavLink
-          to="/appointment"
+          to="/book-appointment"
           className="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
         >
           Book Appointment
         </NavLink>
 
-        {/* Mobile Menu Button */}
+        {/* ✅ Mobile Menu Button */}
         <button
           className="md:hidden text-gray-700 text-3xl focus:outline-none transition"
           onClick={() => setOpen(!open)}
@@ -62,7 +61,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* ✅ Mobile Dropdown Menu */}
       <div
         className={`md:hidden bg-white shadow-md overflow-hidden transition-all duration-300 ${
           open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
@@ -85,9 +84,10 @@ export default function Navbar() {
             </li>
           ))}
 
+          {/* ✅ Mobile CTA Button */}
           <li>
             <NavLink
-              to="/appointment"
+              to="/book-appointment"
               onClick={() => setOpen(false)}
               className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
             >

@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import data from "../data/Services.json";
 
 export default function Services() {
   return (
@@ -9,130 +10,137 @@ export default function Services() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center py-24 px-6">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-          Our Medical Services
+          {data.heroSection.title}
         </h1>
         <p className="text-lg md:text-xl max-w-3xl mx-auto text-blue-100">
-          Comprehensive healthcare services delivered by expert medical professionals
+          {data.heroSection.description}
         </p>
       </section>
 
-      {/* Description Section (Your Uploaded Example) */}
+      {/* Description Section */}
       <section className="py-20 text-center px-6 max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
-          We offer a wide range of medical services for every need
+          {data.descriptionSection.title}
         </h2>
         <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
-          From routine check-ups to specialized treatments, our comprehensive
-          medical services are designed to keep you and your family healthy at
-          every stage of life.
+          {data.descriptionSection.description}
         </p>
+      </section>
+
+      {/* Medical Services Section */}
+      <section className="w-full py-24 bg-[#f5f9ff] px-6">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+            Our Medical Services
+          </h2>
+          <p className="text-lg text-gray-600">
+            Comprehensive care across multiple specialties — from routine check-ups to advanced medical treatments.
+          </p>
+        </div>
+
+        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {data.servicesList.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-md p-8 text-left flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
+            >
+              <div>
+                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">{service.desc}</p>
+                <ul className="text-sm text-gray-700 space-y-1 mb-6">
+                  {service.list.map((item, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="text-blue-600">✔</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <button className="bg-blue-600 text-white font-medium rounded-lg px-5 py-2 mt-auto hover:bg-blue-700 transition-colors">
+                Learn More
+              </button>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* How It Works Section */}
-<section className="py-20 bg-white text-center">
-  <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
-    How It Works
-  </h2>
-  <p className="text-gray-600 text-lg mb-16">
-    Simple steps to get the healthcare you need
-  </p>
+      <section className="py-20 bg-white text-center">
+        <h2 className="text-4xl font-extrabold text-gray-900 mb-4">How It Works</h2>
+        <p className="text-gray-600 text-lg mb-16">
+          Simple steps to get the healthcare you need
+        </p>
 
-  <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
-    {/* Line connecting steps */}
-    <div className="hidden md:block absolute top-16 left-0 w-full h-[2px] bg-blue-200 z-0"></div>
+        <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+          <div className="hidden md:block absolute top-16 left-0 w-full h-[2px] bg-blue-200 z-0"></div>
 
-    {/* Step 1 */}
-    <div className="relative z-10 flex flex-col items-center mb-12 md:mb-0">
-      <div className="bg-blue-600 text-white w-24 h-24 rounded-full flex items-center justify-center mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">Book</h3>
-      <p className="text-gray-600 max-w-[220px]">
-        Schedule your appointment online or call us
-      </p>
-    </div>
+          {data.howItWorks.map((step, index) => (
+            <div key={index} className="relative z-10 flex flex-col items-center mb-12 md:mb-0">
+              <div className="bg-blue-600 text-white w-24 h-24 rounded-full flex items-center justify-center mb-6">
+                <span className="text-3xl">⭐</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 max-w-[220px]">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-    {/* Step 2 */}
-    <div className="relative z-10 flex flex-col items-center mb-12 md:mb-0">
-      <div className="bg-blue-600 text-white w-24 h-24 rounded-full flex items-center justify-center mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 21h8M12 17v4M3 11h18M5 11V6a1 1 0 011-1h12a1 1 0 011 1v5" />
-        </svg>
-      </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">Visit</h3>
-      <p className="text-gray-600 max-w-[220px]">
-        Come to our modern facility for your consultation
-      </p>
-    </div>
+      {/* FAQ Section */}
+      <section className="w-full bg-[#f7fbff] py-24 px-6">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Get answers to common questions about our services
+          </p>
+        </div>
 
-    {/* Step 3 */}
-    <div className="relative z-10 flex flex-col items-center mb-12 md:mb-0">
-      <div className="bg-blue-600 text-white w-24 h-24 rounded-full flex items-center justify-center mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">Diagnose</h3>
-      <p className="text-gray-600 max-w-[220px]">
-        Our experts provide accurate diagnosis and treatment plans
-      </p>
-    </div>
+        <div className="max-w-3xl mx-auto space-y-6">
+          {data.faqList.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-2xl p-6 text-left hover:shadow-lg transition-shadow duration-300"
+            >
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {faq.question}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-    {/* Step 4 */}
-    <div className="relative z-10 flex flex-col items-center">
-      <div className="bg-blue-600 text-white w-24 h-24 rounded-full flex items-center justify-center mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-.91-.91a5.5 5.5 0 00-7.78 7.78l.91.91L12 21l7.78-7.78.91-.91a5.5 5.5 0 000-7.78z" />
-        </svg>
-      </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">Recover</h3>
-      <p className="text-gray-600 max-w-[220px]">
-        Follow-up care and support for your complete recovery
-      </p>
-    </div>
-  </div>
+      {/* Emergency Section */}
+      <section className="w-full bg-red-600 text-white py-20 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            {data.emergencySection.title}
+          </h2>
 
-  {/* Floating Book Button */}
-  <button className="fixed bottom-6 right-6 bg-blue-600 text-white flex items-center gap-2 px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-all">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-5 h-5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-    </svg>
-    Book Now
-  </button>
-</section>
+          <p className="text-lg text-red-100 mb-10">
+            {data.emergencySection.description}
+          </p>
 
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button className="bg-white text-red-600 font-semibold px-8 py-3 rounded-xl hover:bg-red-50 transition-colors">
+              Call {data.emergencySection.callNumber}
+            </button>
+            <button className="border-2 border-white text-white font-semibold px-8 py-3 rounded-xl hover:bg-white hover:text-red-600 transition-colors">
+              Emergency Services
+            </button>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>

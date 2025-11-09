@@ -1,0 +1,69 @@
+{
+  "heroSection": {
+    "title": "Meet Our Expert Doctors",
+    "subtitle": "Our team combines medical expertise with genuine compassion to deliver exceptional healthcare"
+  },
+
+  "introSection": {
+    "title": "Our team combines medical expertise with genuine compassion",
+    "description": "Each of our doctors brings years of specialized training and experience, combined with a deep commitment to patient care."
+  },
+
+  "doctors": [
+    {
+      "name": "Dr. Rajesh Sharma",
+      "specialization": "Cardiologist",
+      "experience": "20+ Years",
+      "qualification": "MBBS, MD Cardiology",
+      "description": "Leading cardiologist with 20+ years of experience in interventional cardiology and heart surgery.",
+      "image": "drimg1.png"
+    },
+    {
+      "name": "Dr. Priya Patel",
+      "specialization": "Neurologist",
+      "experience": "15+ Years",
+      "qualification": "MBBS, MD Neurology",
+      "description": "Expert neurologist specializing in stroke care, epilepsy treatment, and neurodegenerative disorders.",
+      "image": "drimg3.png"
+    },
+    {
+      "name": "Dr. Amit Kumar",
+      "specialization": "Orthopedic Surgeon",
+      "experience": "18+ Years",
+      "qualification": "MBBS, MS Orthopedics",
+      "description": "Skilled orthopedic surgeon with expertise in joint replacement and sports medicine.",
+      "image": "drimg2.png"
+    },
+    {
+      "name": "Dr. Sunita Reddy",
+      "specialization": "Pediatrician",
+      "experience": "12+ Years",
+      "qualification": "MBBS, MD Pediatrics",
+      "description": "Compassionate pediatrician dedicated to providing comprehensive care for children of all ages.",
+      "image": "drimg5.png"
+    },
+    {
+      "name": "Dr. Vikram Singh",
+      "specialization": "Ophthalmologist",
+      "experience": "16+ Years",
+      "qualification": "MBBS, MS Ophthalmology",
+      "description": "Expert eye specialist with advanced training in cataract surgery and retinal treatments.",
+      "image": "drimg4.png"
+    },
+    {
+      "name": "Dr. Kavya Nair",
+      "specialization": "Dermatologist",
+      "experience": "14+ Years",
+      "qualification": "MBBS, MD Dermatology",
+      "description": "Renowned dermatologist specializing in skin care, cosmetic procedures, and dermatological surgery.",
+      "image": "drimg2.png"
+    }
+  ],
+
+  "stats": [
+    { "value": "25+", "label": "Expert Doctors" },
+    { "value": "10+", "label": "Medical Departments" },
+    { "value": "10,000+", "label": "Patients Served" },
+    { "value": "15+", "label": "Years Experience" }
+  ]
+}

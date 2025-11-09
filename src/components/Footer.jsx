@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -10,11 +11,19 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3 mb-5">
             <div className="bg-blue-600 p-2 rounded-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
-                   viewBox="0 0 24 24" strokeWidth={2} stroke="white" 
-                   className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" 
-                      d="M12 8c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 12v8m0 0l-4-4m4 4l4-4" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="white"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 8c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 12v8m0 0l-4-4m4 4l4-4"
+                />
               </svg>
             </div>
             <h2 className="text-xl md:text-2xl font-semibold text-white">
@@ -46,19 +55,17 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Column 2: Quick Links */}
+        {/* Column 2: Quick Links (Routing Added) */}
         <div>
           <h3 className="text-lg md:text-xl font-semibold text-white mb-4">
             Quick Links
           </h3>
           <ul className="space-y-2 text-sm md:text-base">
-            {["Home", "About Us", "Services", "Doctors", "Contact"].map((link, i) => (
-              <li key={i}>
-                <a href="#" className="hover:text-blue-400 transition">
-                  {link}
-                </a>
-              </li>
-            ))}
+            <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
+            <li><Link to="/about" className="hover:text-blue-400 transition">About Us</Link></li>
+            <li><Link to="/services" className="hover:text-blue-400 transition">Services</Link></li>
+            <li><Link to="/doctors" className="hover:text-blue-400 transition">Doctors</Link></li>
+            <li><Link to="/contact" className="hover:text-blue-400 transition">Contact</Link></li>
           </ul>
         </div>
 
@@ -118,7 +125,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-xs md:text-sm text-gray-500 px-6 max-w-7xl mx-auto">
         <p className="text-center md:text-left">
-          © 2024 MedCare Plus. All rights reserved.
+          © 2025 MedCare Plus. All rights reserved.
         </p>
         <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="#" className="hover:text-blue-400 transition">

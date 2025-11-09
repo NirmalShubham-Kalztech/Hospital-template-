@@ -1,0 +1,110 @@
+{
+  "heroSection": {
+    "title": "Our Medical Services",
+    "description": "Comprehensive healthcare services delivered by expert medical professionals"
+  },
+
+  "descriptionSection": {
+    "title": "We offer a wide range of medical services for every need",
+    "description": "From routine check-ups to specialized treatments, our comprehensive medical services are designed to keep you and your family healthy at every stage of life."
+  },
+
+  "servicesList": [
+    {
+      "icon": "💙",
+      "title": "Cardiology",
+      "desc": "Comprehensive heart care including diagnostics, treatment, and preventive cardiology services.",
+      "list": ["ECG & Echo", "Cardiac Catheterization", "Heart Surgery", "Preventive Care"]
+    },
+    {
+      "icon": "🦷",
+      "title": "Dental Care",
+      "desc": "Complete oral health services from routine cleanings to advanced dental procedures.",
+      "list": ["Routine Cleanings", "Root Canal", "Orthodontics", "Cosmetic Dentistry"]
+    },
+    {
+      "icon": "👁️",
+      "title": "Eye Care",
+      "desc": "Comprehensive vision care and treatment for all eye-related conditions.",
+      "list": ["Eye Exams", "Cataract Surgery", "Glaucoma Treatment", "Retinal Care"]
+    },
+    {
+      "icon": "🧠",
+      "title": "Neurology",
+      "desc": "Advanced neurological care for brain, spine, and nervous system disorders.",
+      "list": ["Brain Imaging", "Stroke Care", "Epilepsy Treatment", "Memory Disorders"]
+    },
+    {
+      "icon": "🩻",
+      "title": "Radiology",
+      "desc": "State-of-the-art imaging services for accurate diagnosis and treatment planning.",
+      "list": ["X-Ray", "CT Scan", "MRI", "Ultrasound"]
+    },
+    {
+      "icon": "🧸",
+      "title": "Pediatrics",
+      "desc": "Specialized medical care for infants, children, and adolescents.",
+      "list": ["Well-Child Visits", "Vaccinations", "Growth Monitoring", "Pediatric Surgery"]
+    },
+    {
+      "icon": "💉",
+      "title": "Vaccination",
+      "desc": "Comprehensive immunization services for all ages including travel vaccines.",
+      "list": ["Routine Vaccines", "Travel Vaccines", "Flu Shots", "COVID-19 Vaccines"]
+    },
+    {
+      "icon": "🩺",
+      "title": "General Check-ups",
+      "desc": "Comprehensive health screenings and preventive care for overall wellness.",
+      "list": ["Annual Physicals", "Health Screenings", "Blood Tests", "Preventive Care"]
+    }
+  ],
+
+  "howItWorks": [
+    {
+      "title": "Book",
+      "desc": "Schedule your appointment online or call us",
+      "icon": "calendar"
+    },
+    {
+      "title": "Visit",
+      "desc": "Come to our modern facility for your consultation",
+      "icon": "hospital"
+    },
+    {
+      "title": "Diagnose",
+      "desc": "Our experts provide accurate diagnosis and treatment plans",
+      "icon": "search"
+    },
+    {
+      "title": "Recover",
+      "desc": "Follow-up care and support for your complete recovery",
+      "icon": "heart"
+    }
+  ],
+
+  "faqList": [
+    {
+      "question": "Do you accept insurance?",
+      "answer": "Yes, we accept most major insurance plans. Please contact our billing department to verify your specific coverage."
+    },
+    {
+      "question": "Can I book appointments online?",
+      "answer": "Absolutely! You can book appointments through our website, mobile app, or by calling our appointment line."
+    },
+    {
+      "question": "What should I bring to my appointment?",
+      "answer": "Please bring a valid ID, insurance card, list of current medications, and any relevant medical records."
+    },
+    {
+      "question": "Do you offer emergency services?",
+      "answer": "Yes, we provide 24/7 emergency care. For life-threatening emergencies, please call 911 or visit our emergency department."
+    }
+  ],
+
+  "emergencySection": {
+    "title": "Need urgent help?",
+    "description": "Our emergency team is available 24/7 for urgent medical situations",
+    "callNumber": "+91 98765 43210"
+  }
+}

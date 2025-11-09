@@ -4,6 +4,12 @@ import Footer from "../components/Footer";
 import { Phone } from "lucide-react";
 
 import contactData from "../data/contact.json";
+import { MapPin, Phone as PhoneIcon, Mail, Clock } from "lucide-react";
+
+// import { MapPin, Phone, Mail, Clock } from "lucide-react";import { MapPin, Phone as PhoneIcon, Mail, Clock } from "lucide-react";
+
+
+
 
 export default function ContactPage() {
   const [message, setMessage] = useState("");
@@ -21,6 +27,60 @@ export default function ContactPage() {
           {contactData.hero.subtitle}
         </p>
       </section>
+
+    <section className="w-full bg-gradient-to-br from-blue-50 via-gray-50 to-white py-16 px-6">
+  <div className="max-w-5xl mx-auto text-center">
+  
+
+    {/* Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Address Card */}
+      <div className="bg-blue-50 shadow-md rounded-2xl p-6 border border-blue-100 hover:shadow-xl hover:bg-blue-100 transition-all duration-300">
+        <div className="flex justify-center mb-3 text-blue-600">
+          <MapPin size={32} />
+        </div>
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Address</h3>
+        <p className="text-gray-600 leading-relaxed">
+          123 Wellness Street<br />
+          Pune, Maharashtra 411001<br />
+          India
+        </p>
+      </div>
+
+      {/* Phone Card */}
+      <div className="bg-green-50 shadow-md rounded-2xl p-6 border border-green-100 hover:shadow-xl hover:bg-green-100 transition-all duration-300">
+        <div className="flex justify-center mb-3 text-green-600">
+          <PhoneIcon size={32} />
+        </div>
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Phone</h3>
+        <p className="text-gray-600">📞 +91 98765 43210</p>
+      </div>
+
+      {/* Email Card */}
+      <div className="bg-yellow-50 shadow-md rounded-2xl p-6 border border-yellow-100 hover:shadow-xl hover:bg-yellow-100 transition-all duration-300">
+        <div className="flex justify-center mb-3 text-yellow-600">
+          <Mail size={32} />
+        </div>
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Email</h3>
+        <p className="text-gray-600">✉️ contact@medcareplus.com</p>
+      </div>
+
+      {/* Hours Card */}
+      <div className="bg-purple-50 shadow-md rounded-2xl p-6 border border-purple-100 hover:shadow-xl hover:bg-purple-100 transition-all duration-300">
+        <div className="flex justify-center mb-3 text-purple-600">
+          <Clock size={32} />
+        </div>
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Hours</h3>
+        <p className="text-gray-600 leading-relaxed">
+          24/7 Emergency Care<br />
+          Mon–Sat: 8:00 AM – 8:00 PM<br />
+          Sunday: 9:00 AM – 5:00 PM
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* ✅ Contact & Map Section */}
       <section className="py-20 px-6 max-w-6xl mx-auto">

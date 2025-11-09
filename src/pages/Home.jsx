@@ -33,7 +33,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                to="/appointment"
+                to="/book-appointment"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 rounded-xl font-medium shadow-md transition"
               >
                 {content.hero.button1}

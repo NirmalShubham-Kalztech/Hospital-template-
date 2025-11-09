@@ -1,0 +1,39 @@
+{
+  "heroSection": {
+    "title": "Book Your Appointment",
+    "description": "Schedule your visit with our expert doctors easily using the form below."
+  },
+
+  "formSection": {
+    "title": "Appointment Details",
+    "placeholders": {
+      "name": "Enter your full name",
+      "email": "Enter your email",
+      "phone": "Enter your phone number",
+      "message": "Any specific concerns or notes..."
+    },
+    "labels": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "doctor": "Select Doctor",
+      "date": "Appointment Date",
+      "time": "Appointment Time",
+      "textarea": "Additional Message (Optional)"
+    },
+    "doctors": [
+      "Dr. Anjali Patil",
+      "Dr. Rajesh Sharma",
+      "Dr. Meena Deshmukh",
+      "Dr. Arvind Rao"
+    ],
+    "submitButton": "Book Appointment"
+  },
+
+  "ctaSection": {
+    "title": "Need Emergency Care?",
+    "description": "Call our 24/7 helpline and get instant medical assistance.",
+    "buttonText": "Call Now",
+    "callNumber": "+918888888888"
+  }
+}
