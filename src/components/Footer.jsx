@@ -1,14 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f172a] text-gray-300 pt-16 pb-8">
+    <motion.footer
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-[#0f172a] text-gray-300 pt-16 pb-8"
+    >
       {/* Main Footer Grid */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
-        {/* Column 1: Brand */}
-        <div>
+        {/* ✅ Column 1: Brand */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="flex items-center gap-3 mb-5">
             <div className="bg-blue-600 p-2 rounded-xl">
               <svg
@@ -32,8 +43,8 @@ export default function Footer() {
           </div>
 
           <p className="text-gray-400 mb-6 leading-relaxed text-sm md:text-base">
-            Delivering trusted healthcare for every generation with personalized
-            medical care backed by technology and compassion.
+            Delivering trusted healthcare for every generation with
+            personalized medical care backed by technology and compassion.
           </p>
 
           {/* Social Icons */}
@@ -44,33 +55,55 @@ export default function Footer() {
               { icon: "instagram", href: "#" },
               { icon: "linkedin", href: "#" },
             ].map((social, i) => (
-              <a
+              <motion.a
                 key={i}
+                whileHover={{ scale: 1.15 }}
+                transition={{ type: "spring", stiffness: 200 }}
                 href={social.href}
-                className="bg-blue-600 hover:bg-blue-500 text-white p-3 rounded-lg transition transform hover:scale-105"
+                className="bg-blue-600 hover:bg-blue-500 text-white p-3 rounded-lg transition"
               >
                 <i className={`fab fa-${social.icon}`}></i>
-              </a>
+              </motion.a>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Column 2: Quick Links (Routing Added) */}
-        <div>
+        {/* ✅ Column 2: Quick Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <h3 className="text-lg md:text-xl font-semibold text-white mb-4">
             Quick Links
           </h3>
           <ul className="space-y-2 text-sm md:text-base">
-            <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
-            <li><Link to="/about" className="hover:text-blue-400 transition">About Us</Link></li>
-            <li><Link to="/services" className="hover:text-blue-400 transition">Services</Link></li>
-            <li><Link to="/doctors" className="hover:text-blue-400 transition">Doctors</Link></li>
-            <li><Link to="/contact" className="hover:text-blue-400 transition">Contact</Link></li>
+            {[
+              { label: "Home", path: "/" },
+              { label: "About Us", path: "/about" },
+              { label: "Services", path: "/services" },
+              { label: "Doctors", path: "/doctors" },
+              { label: "Contact", path: "/contact" },
+            ].map((item, i) => (
+              <motion.li
+                key={i}
+                whileHover={{ x: 6 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link to={item.path} className="hover:text-blue-400 transition">
+                  {item.label}
+                </Link>
+              </motion.li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Column 3: Our Services */}
-        <div>
+        {/* ✅ Column 3: Our Services */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <h3 className="text-lg md:text-xl font-semibold text-white mb-4">
             Our Services
           </h3>
@@ -83,17 +116,25 @@ export default function Footer() {
               "Pediatrics",
               "General Check-up",
             ].map((service, i) => (
-              <li key={i}>
+              <motion.li
+                key={i}
+                whileHover={{ x: 6 }}
+                transition={{ duration: 0.2 }}
+              >
                 <a href="#" className="hover:text-blue-400 transition">
                   {service}
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Column 4: Contact Info */}
-        <div>
+        {/* ✅ Column 4: Contact Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <h3 className="text-lg md:text-xl font-semibold text-white mb-4">
             Contact Info
           </h3>
@@ -119,14 +160,17 @@ export default function Footer() {
               <p>24/7 Emergency Care</p>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-xs md:text-sm text-gray-500 px-6 max-w-7xl mx-auto">
-        <p className="text-center md:text-left">
-          © 2025 MedCare Plus. All rights reserved.
-        </p>
+      {/* ✅ Bottom Bar */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-xs md:text-sm text-gray-500 px-6 max-w-7xl mx-auto"
+      >
+        <p>© 2025 MedCare Plus. All rights reserved.</p>
         <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="#" className="hover:text-blue-400 transition">
             Privacy Policy
@@ -135,7 +179,7 @@ export default function Footer() {
             Terms of Service
           </a>
         </div>
-      </div>
-    </footer>
+      </motion.div>
+    </motion.footer>
   );
 }

@@ -1,8 +1,9 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-// ✅ JSON IMPORT (New Change)
+// JSON
 import content from "../data/content.json";
 
 export default function Home() {
@@ -11,18 +12,24 @@ export default function Home() {
       <Navbar />
 
       <div className="pt-20">
-        {/* ================= HERO SECTION ================= */}
+        {/* ======================================================
+                         ✅ HERO SECTION
+        ====================================================== */}
         <section
           className="relative h-[90vh] sm:h-[80vh] bg-cover bg-center flex items-center justify-center"
           style={{
-            // ✅ Background from JSON
             backgroundImage: `url('${content.hero.backgroundImage}')`,
           }}
         >
           <div className="absolute inset-0 bg-blue-700/60"></div>
 
-          {/* ✅ Text from JSON */}
-          <div className="relative z-10 text-center text-white px-4 sm:px-8 max-w-3xl">
+          {/* ✅ Hero Animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 text-center text-white px-4 sm:px-8 max-w-3xl"
+          >
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-snug mb-6">
               {content.hero.title}
             </h1>
@@ -46,24 +53,22 @@ export default function Home() {
                 {content.hero.button2}
               </Link>
             </div>
-          </div>
-
-          {/* Floating Button Same
-          <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6">
-            <Link
-              to="/appointment"
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-5 py-2 sm:py-3 rounded-xl font-medium shadow-lg transition text-sm sm:text-base"
-            >
-              <span>📅</span> Book Now
-            </Link>
-          </div> */}
+          </motion.div>
         </section>
 
-        {/* ================= WHO WE ARE SECTION ================= */}
+        {/* ======================================================
+                         ✅ WHO WE ARE
+        ====================================================== */}
         <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              {/* ✅ JSON Text */}
+
+            {/* ✅ Text Animation */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-6">
                 {content.whoWeAre.title}
               </h2>
@@ -79,35 +84,72 @@ export default function Home() {
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium shadow-md transition">
                 {content.whoWeAre.button}
               </button>
-            </div>
+            </motion.div>
 
-            {/* ✅ Image from JSON */}
-            <div className="flex justify-center">
+            {/* ✅ Image Animation */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="flex justify-center"
+            >
               <img
                 src={content.whoWeAre.image}
                 alt="Our Medical Team"
                 className="rounded-2xl shadow-lg w-full max-w-md md:max-w-full object-cover"
               />
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* ================= OUR SERVICES ================= */}
+        {/* ======================================================
+                         ✅ SERVICES
+        ====================================================== */}
         <section className="py-16 sm:py-20 bg-blue-50">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-4"
+            >
               Our Medical Services
-            </h2>
+            </motion.h2>
 
-            <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="text-gray-600 mb-12 max-w-2xl mx-auto"
+            >
               Comprehensive healthcare services delivered by expert medical professionals.
-            </p>
+            </motion.p>
 
-            {/* ✅ Services Coming from JSON */}
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {/* ✅ Stagger Animation */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.2 }
+                }
+              }}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+            >
               {content.services.map((s, i) => (
-                <div
+                <motion.div
                   key={i}
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    show: { opacity: 1, y: 0 }
+                  }}
                   className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition text-center"
                 >
                   <div className="bg-blue-100 w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6">
@@ -122,38 +164,68 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                     </svg>
                   </div>
+
                   <h3 className="text-xl font-semibold mb-3">{s.title}</h3>
                   <p className="text-gray-600">{s.description}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* ================= WHY CHOOSE US ================= */}
+        {/* ======================================================
+                    ✅ WHY CHOOSE US
+        ====================================================== */}
         <section className="py-16 sm:py-20 bg-white text-center">
           <div className="max-w-7xl mx-auto px-6">
-            {/* ✅ Title & Subtitle */}
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-4"
+            >
               {content.whyChooseUs.title}
-            </h2>
+            </motion.h2>
 
-            <p className="text-gray-600 mb-12">{content.whyChooseUs.subtitle}</p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-gray-600 mb-12"
+            >
+              {content.whyChooseUs.subtitle}
+            </motion.p>
 
-            {/* ✅ Stats from JSON */}
+            {/* ✅ Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
               {content.whyChooseUs.stats.map((stat, i) => (
-                <div key={i}>
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
                   <h3 className="text-3xl sm:text-4xl font-bold text-blue-600">{stat.num}</h3>
                   <p className="text-gray-700 mt-2">{stat.label}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            {/* ✅ Cards from JSON */}
+            {/* ✅ Cards */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {content.whyChooseUs.cards.map((card, i) => (
-                <div key={i} className="bg-blue-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-blue-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition"
+                >
                   <div className="w-14 h-14 mx-auto mb-5 flex items-center justify-center bg-blue-100 rounded-full">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -169,26 +241,45 @@ export default function Home() {
 
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">{card.title}</h4>
                   <p className="text-gray-600">{card.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ================= TESTIMONIALS ================= */}
+        {/* ======================================================
+                    ✅ TESTIMONIALS
+        ====================================================== */}
         <section className="py-16 sm:py-20 bg-[#f5f9ff]">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-3"
+            >
               {content.testimonials.title}
-            </h2>
+            </motion.h2>
 
-            <p className="text-gray-600 mb-12">{content.testimonials.subtitle}</p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-gray-600 mb-12"
+            >
+              {content.testimonials.subtitle}
+            </motion.p>
 
-            {/* ✅ Testimonials from JSON */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {content.testimonials.people.map((name, i) => (
-                <div
+                <motion.div
                   key={i}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7 }}
+                  viewport={{ once: true }}
                   className="bg-white rounded-2xl shadow-md hover:shadow-lg transition p-8 text-left"
                 >
                   <div className="flex mb-3">
@@ -212,37 +303,87 @@ export default function Home() {
                         </svg>
                       ))}
                   </div>
+
                   <p className="text-gray-600 italic mb-4">“The care was exceptional.”</p>
                   <p className="font-semibold text-gray-900">- {name}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ================= CTA SECTION ================= */}
-        <section className="bg-[#2563eb] py-16 sm:py-20 text-center text-white">
-          <div className="max-w-5xl mx-auto px-6">
-            {/* ✅ CTA JSON */}
-            <h2 className="text-2xl sm:text-4xl font-extrabold mb-4">
-              {content.cta.title}
-            </h2>
+        {/* ======================================================
+                           ✅ CTA
+        ====================================================== */}
+       <section className="bg-[#2563eb] py-16 sm:py-20 text-center text-white">
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+    className="max-w-5xl mx-auto px-6"
+  >
+    <h2 className="text-2xl sm:text-4xl font-extrabold mb-4">
+      {content.cta.title}
+    </h2>
 
-            <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-10">
-              {content.cta.subtitle}
-            </p>
+    <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-10">
+      {content.cta.subtitle}
+    </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-white text-[#2563eb] font-semibold px-8 py-4 rounded-xl text-lg shadow-md hover:bg-blue-50 transition">
-                {content.cta.button1}
-              </button>
+    <div className="flex flex-col sm:flex-row justify-center gap-6">
 
-              <button className="border-2 border-white text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white hover:text-[#2563eb] transition">
-                {content.cta.button2}
-              </button>
-            </div>
-          </div>
-        </section>
+      {/* ✅ Button 1 Link */}
+      <Link
+        to="/book-appointment"
+        className="bg-white text-[#2563eb] font-semibold px-8 py-4 rounded-xl text-lg shadow-md hover:bg-blue-50 transition"
+      >
+        {content.cta.button1}
+      </Link>
+
+      {/* ✅ Button 2 Link */}
+      <Link
+        to="/contact"
+        className="border-2 border-white text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white hover:text-[#2563eb] transition"
+      >
+        {content.cta.button2}
+      </Link>
+
+    </div>
+  </motion.div>
+</section>
+
+
+
+        {/* Emergency Section */}
+<motion.section
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="w-full bg-red-600 text-white py-20 px-6 text-center"
+>
+  <div className="max-w-3xl mx-auto">
+    <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+      {content.emergencySection.title}
+    </h2>
+
+    <p className="text-lg text-red-100 mb-10">
+      {content.emergencySection.description}
+    </p>
+
+    <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <button className="bg-white text-red-600 font-semibold px-8 py-3 rounded-xl hover:bg-red-50 transition-colors">
+        Call {content.emergencySection.callNumber}
+      </button>
+
+      <button className="border-2 border-white text-white font-semibold px-8 py-3 rounded-xl hover:bg-white hover:text-red-600 transition-colors">
+        Emergency Services
+      </button>
+    </div>
+  </div>
+</motion.section>
+
 
         <Footer />
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import data from "../data/BookAppointment.json";
+import { motion } from "framer-motion";
 
 export default function BookAppointment() {
   const [formData, setFormData] = useState({
@@ -27,8 +28,8 @@ export default function BookAppointment() {
     setFormData({
       name: "",
       email: "",
-      phone: "",
       doctor: "",
+      phone: "",
       date: "",
       time: "",
       message: ""
@@ -39,19 +40,29 @@ export default function BookAppointment() {
     <>
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center py-24 mt-16">
+      {/* ✅ Hero Section (Animation) */}
+      <motion.section
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center py-24 mt-16"
+      >
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           {data.heroSection.title}
         </h1>
         <p className="text-blue-100 text-lg max-w-2xl mx-auto">
           {data.heroSection.description}
         </p>
-      </section>
+      </motion.section>
 
-      {/* Form Section */}
+      {/* ✅ Form Section with Animations */}
       <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-10"
+        >
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             {data.formSection.title}
           </h2>
@@ -61,7 +72,11 @@ export default function BookAppointment() {
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {/* Name */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+            >
               <label className="block text-gray-700 font-medium mb-2">
                 {data.formSection.labels.name}
               </label>
@@ -72,12 +87,16 @@ export default function BookAppointment() {
                 onChange={handleChange}
                 required
                 placeholder={data.formSection.placeholders.name}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
               />
-            </div>
+            </motion.div>
 
             {/* Email */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+            >
               <label className="block text-gray-700 font-medium mb-2">
                 {data.formSection.labels.email}
               </label>
@@ -88,12 +107,16 @@ export default function BookAppointment() {
                 onChange={handleChange}
                 required
                 placeholder={data.formSection.placeholders.email}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
               />
-            </div>
+            </motion.div>
 
             {/* Phone */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+            >
               <label className="block text-gray-700 font-medium mb-2">
                 {data.formSection.labels.phone}
               </label>
@@ -104,12 +127,16 @@ export default function BookAppointment() {
                 onChange={handleChange}
                 required
                 placeholder={data.formSection.placeholders.phone}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
               />
-            </div>
+            </motion.div>
 
             {/* Doctor */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+            >
               <label className="block text-gray-700 font-medium mb-2">
                 {data.formSection.labels.doctor}
               </label>
@@ -118,7 +145,7 @@ export default function BookAppointment() {
                 value={formData.doctor}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
               >
                 <option value="">-- Select Doctor --</option>
                 {data.formSection.doctors.map((doc, index) => (
@@ -127,10 +154,14 @@ export default function BookAppointment() {
                   </option>
                 ))}
               </select>
-            </div>
+            </motion.div>
 
             {/* Date */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+            >
               <label className="block text-gray-700 font-medium mb-2">
                 {data.formSection.labels.date}
               </label>
@@ -140,12 +171,16 @@ export default function BookAppointment() {
                 value={formData.date}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
               />
-            </div>
+            </motion.div>
 
             {/* Time */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+            >
               <label className="block text-gray-700 font-medium mb-2">
                 {data.formSection.labels.time}
               </label>
@@ -155,12 +190,17 @@ export default function BookAppointment() {
                 value={formData.time}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
               />
-            </div>
+            </motion.div>
 
             {/* Message */}
-            <div className="md:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="md:col-span-2"
+            >
               <label className="block text-gray-700 font-medium mb-2">
                 {data.formSection.labels.textarea}
               </label>
@@ -170,38 +210,52 @@ export default function BookAppointment() {
                 onChange={handleChange}
                 rows="4"
                 placeholder={data.formSection.placeholders.message}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
               ></textarea>
-            </div>
+            </motion.div>
 
-            {/* Submit Button */}
-            <div className="md:col-span-2 text-center">
-              <button
+            {/* Submit */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="md:col-span-2 text-center"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
                 type="submit"
                 className="bg-blue-600 text-white font-semibold py-3 px-10 rounded-lg shadow-md hover:bg-blue-700 transition"
               >
                 {data.formSection.submitButton}
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </form>
-        </div>
+        </motion.div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-blue-600 text-center text-white py-20 px-6">
+      {/* ✅ CTA Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="bg-blue-600 text-center text-white py-20 px-6"
+      >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           {data.ctaSection.title}
         </h2>
         <p className="text-blue-100 text-lg mb-8">
           {data.ctaSection.description}
         </p>
+
+        {/* ✅ FIXED LINE — NO ERROR NOW */}
         <a
           href={`tel:${data.ctaSection.callNumber}`}
           className="bg-white text-blue-700 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transition"
         >
           {data.ctaSection.buttonText}
         </a>
-      </section>
+      </motion.section>
 
       <Footer />
     </>
